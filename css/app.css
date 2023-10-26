@@ -8,19 +8,38 @@ img{
     max-width: 100%;
 }
 
+ul, li{
+    list-style: none;
+}
+
 .flex-grow-1{
     flex-grow: 1;
 }
 
+.flex-align-center{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.justify-space-between{
+    justify-content: space-between;
+}
+
 #app{
     height: 100vh;
+
+    padding: 50px 100px;
 }
 
 .container{
     max-width: 1200px;
     margin: 0 auto;
+    height: 100%;
 
     display: flex;
+
+    border: 2px solid black;
 }
 
 .col-4{
@@ -37,9 +56,82 @@ img{
     flex-direction: column;
 }
 
+.contacts > *,
+.chat > *{
+    padding: 0 10px;
+}
+
+/* ASIDE */
+
+.tool-bar{
+    min-height: 60px;
+
+    background-color: rgb(236,229,221);
+    border-right: 2px solid gray;
+}
+
+.my-contact img{
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 999px;
+}
+
+.tool-bar__icons{
+    gap: 12px;
+
+    color: gray;
+}
+
+.search-bar{
+    min-height: 40px;
+}
+
+.contact{
+    padding: 7px;
+}
+
+.contact__img img{
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 999px;
+}
+
+/* MAIN */
+
+.chat__tool-bar,
+.text-box{
+    min-height: 60px;
+
+    background-color: rgb(236,229,221);
+}
+
+.selected-contact img{
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 999px;
+}
+
+.chat__tool-bar__icons{
+    gap: 12px;
+
+    color: gray;
+}
+
 .selected-chat{
     display: flex;
     flex-direction: column;
+
+    gap: 10px;
+    padding: 20px 80px;
+
+    background-image: url(../img/mine.jpg);
+}
+
+.selected-chat > *{
+    width: 40%;
+
+    padding: 10px 10px;
+    border-radius: 10px;
 }
 
 .user-message{
@@ -49,8 +141,11 @@ img{
 
 .contact-message{
     align-self: flex-start;
-    background-color: rgb(236,229,221);
+    background-color: rgb(255, 255, 255);
 }
+
+
+
 
 /* DEBUG */
 .debug #app{
@@ -74,10 +169,10 @@ img{
     padding: 20px;
 }
 
-.debug .selected-contact,
+.debug .chat__tool-bar,
 .debug .selected-chat,
 .debug .text-box,
-.debug .my-number,
+.debug .tool-bar,
 .debug .search-bar,
 .debug .contacts__list{
     border: 2px solid cornflowerblue;
