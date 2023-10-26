@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+.flex-grow-1{
+    flex-grow: 1;
+}
+
+#app{
+    height: 100vh;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+}
+
+.col-4{
+    flex-basis: calc((100% / 12) * 4);
+}
+
+.col-8{
+    flex-basis: calc((100% / 12) * 8);
+}
+
+.contacts,
+.chat{
+    display: flex;
+    flex-direction: column;
+}
+
+.selected-chat{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-message{
+    align-self: flex-end;
+    background-color: rgb(220,248,198);
+}
+
+.contact-message{
+    align-self: flex-start;
+    background-color: rgb(236,229,221);
+}
+
+/* DEBUG */
+.debug #app{
+    background-color: tomato;
+    padding: 20px;
+}
+
+.debug .container{
+    border: 2px solid blanchedalmond;
+    padding: 20px;
+    height: 90vh;
+}
+
+.debug .contacts{
+    border: 2px solid greenyellow;
+    padding: 20px;
+}
+
+.debug .chat{
+    border: 2px solid greenyellow;
+    padding: 20px;
+}
+
+.debug .selected-contact,
+.debug .selected-chat,
+.debug .text-box,
+.debug .my-number,
+.debug .search-bar,
+.debug .contacts__list{
+    border: 2px solid cornflowerblue;
+    padding: 20px;
+}
