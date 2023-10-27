@@ -12,6 +12,10 @@ ul, li{
     list-style: none;
 }
 
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
 .flex-grow-1{
     flex-grow: 1;
 }
@@ -22,14 +26,25 @@ ul, li{
     gap: 5px;
 }
 
-.justify-space-between{
+.justify-content-between{
     justify-content: space-between;
+}
+
+.justify-content-around{
+    justify-content: space-around;
 }
 
 #app{
     height: 100vh;
+    overflow: hidden;
 
     padding: 50px 100px;
+
+    background: rgb(7,94,84);
+    background: -moz-linear-gradient(180deg, rgba(7,94,84,1) 22%, rgba(215,210,205,1) 22%);
+    background: -webkit-linear-gradient(180deg, rgba(7,94,84,1) 22%, rgba(215,210,205,1) 22%);
+    background: linear-gradient(180deg, rgba(7,94,84,1) 22%, rgba(215,210,205,1) 22%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#075e54",endColorstr="#d7d2cd",GradientType=1);
 }
 
 .container{
@@ -38,8 +53,6 @@ ul, li{
     height: 100%;
 
     display: flex;
-
-    border: 2px solid black;
 }
 
 .col-4{
@@ -67,7 +80,7 @@ ul, li{
     min-height: 60px;
 
     background-color: rgb(236,229,221);
-    border-right: 2px solid gray;
+    border-right: 1px solid rgb(206, 201, 201);
 }
 
 .my-contact img{
@@ -84,6 +97,35 @@ ul, li{
 
 .search-bar{
     min-height: 40px;
+
+    background-color: white;
+    border-bottom: 1px solid rgb(206, 201, 201);
+}
+
+.input-group{
+    width: 100%;
+    position: relative;
+}
+
+.group-icon{
+    position: absolute;
+    top: 3px;
+    left: 20px;
+
+    color: gray;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 4px 0;
+    padding-left: 50px;
+
+    border: 1px solid rgb(206, 201, 201);
+    border-radius: 5px;
+}
+
+.contacts__list{
+    background-color: white;
 }
 
 .contact{
@@ -96,6 +138,10 @@ ul, li{
     border-radius: 999px;
 }
 
+.contact__name p{
+    font-size: 12px;
+}
+
 /* MAIN */
 
 .chat__tool-bar,
@@ -103,6 +149,10 @@ ul, li{
     min-height: 60px;
 
     background-color: rgb(236,229,221);
+}
+
+.chat__tool-bar{
+    border-left: 1px solid rgb(206, 201, 201);
 }
 
 .selected-contact img{
@@ -144,7 +194,17 @@ ul, li{
     background-color: rgb(255, 255, 255);
 }
 
+.text-box input{
+    width: 80%;
+    padding: 10px 15px;
 
+    border-radius: 5px;
+    border: none;
+}
+
+.text-box i{
+    color: gray;
+}
 
 
 /* DEBUG */

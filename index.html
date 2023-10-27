@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/382dfa8eb4.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/app.css">
     <title>Document</title>
 </head>
@@ -11,10 +14,12 @@
     <div id="app">
         <div class="container">
             <div class="contacts col-4">
-                <div class="tool-bar flex-align-center justify-space-between">
+                <div class="tool-bar flex-align-center justify-content-between">
                     <div class="my-contact flex-align-center">
                         <img src="./img/avatar_io.jpg">
-                        <span>Sofia</span>
+                        <div>
+                            <h4>Sofia</h4>
+                        </div>
                     </div>
                     <div class="tool-bar__icons flex-align-center">
                         <i class="fa-solid fa-circle-notch"></i>
@@ -22,8 +27,13 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div class="search-bar">
-                    Ricerca
+                <div class="search-bar flex-align-center">
+                    <div class="input-group">
+                        <span class="group-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
                 </div>
                 <ul class="contacts__list flex-grow-1">
                     <li class="contact flex-align-center">
@@ -31,52 +41,24 @@
                             <img src="./img/avatar_1.jpg" alt="">
                         </div>
                         <div class="contact__name">
-                            Mario Rossi
-                        </div>
-                    </li>
-                    <li class="contact flex-align-center">
-                        <div class="contact__img">
-                            <img src="./img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="contact__name">
-                            Mario Rossi
-                        </div>
-                    </li>
-                    <li class="contact flex-align-center">
-                        <div class="contact__img">
-                            <img src="./img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="contact__name">
-                            Mario Rossi
-                        </div>
-                    </li>
-                    <li class="contact flex-align-center">
-                        <div class="contact__img">
-                            <img src="./img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="contact__name">
-                            Mario Rossi
-                        </div>
-                    </li>
-                    <li class="contact flex-align-center">
-                        <div class="contact__img">
-                            <img src="./img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="contact__name">
-                            Mario Rossi
+                            <h4>Mario Rossi</h4>
+                            <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="chat col-8">
-                <div class="chat__tool-bar flex-align-center justify-space-between">
+                <div class="chat__tool-bar flex-align-center justify-content-between">
                     <div class="selected-contact flex-align-center">
                         <img src="./img/avatar_1.jpg" alt="">
-                        <span>Mario Rossi</span>
+                        <div class="contact__name">
+                            <h4>Mario Rossi</h4>
+                            <p>Ultimo accesso oggi alle 12:00</p>
+                        </div>
                     </div>
                     <div class="chat__tool-bar__icons flex-align-center">
-                        <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
@@ -97,8 +79,10 @@
                         Ciao Mario
                     </div>
                 </div>
-                <div class="text-box">
-                    SCRIVI QUI IL MESSAGGIO
+                <div class="text-box flex-align-center justify-content-around">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
         </div>
