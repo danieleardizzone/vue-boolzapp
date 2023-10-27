@@ -126,6 +126,11 @@ body{
 
 .contacts__list{
     background-color: white;
+    overflow-y: scroll;
+}
+
+.contact:hover{
+    background-color: rgba(95, 94, 94, 0.2);
 }
 
 .contact{
