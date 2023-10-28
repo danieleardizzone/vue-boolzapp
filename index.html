@@ -37,7 +37,8 @@
                 </div>
                 <ul class="contacts__list flex-grow-1">
                     <li class="contact flex-align-center"
-                    v-for="(contact, index) in contacts" :key="index">
+                    v-for="(contact, index) in contacts" :key="index"
+                    @click="currentIndex = index">
                         <div class="contact__img">
                             <img :src="contact.avatar" alt="">
                         </div>
@@ -51,9 +52,9 @@
             <div class="chat col-8">
                 <div class="chat__tool-bar flex-align-center justify-content-between">
                     <div class="selected-contact flex-align-center">
-                        <img src="./img/avatar_1.jpg" alt="">
+                        <img :src="contacts[currentIndex].avatar" alt="">
                         <div class="contact__name">
-                            <h4>Mario Rossi</h4>
+                            <h4>{{ contacts[currentIndex].name }}</h4>
                             <p>Ultimo accesso oggi alle 12:00</p>
                         </div>
                     </div>
@@ -64,25 +65,18 @@
                     </div>
                 </div>
                 <div class="selected-chat flex-grow-1">
-                    <div class="user-message">
-                        Ciao Mario
-                    </div>
-                    <div class="contact-message">
-                        Ciao Daniele
-                    </div>
-                    <div class="contact-message">
-                        Ciao Daniele
-                    </div>
-                    <div class="contact-message">
-                        Ciao Daniele
-                    </div>
-                    <div class="user-message">
-                        Ciao Mario
-                    </div>
+                    <ul class="messages">
+                    <li v-for="(message, index) in contacts[currentIndex].messages" :key="index" 
+                    :class="message.status === 'sent' ? 'sent-message' : 'received-message'">
+                        {{ message.message }}
+                    </li>
+                    </ul>
                 </div>
                 <div class="text-box flex-align-center justify-content-around">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio"
+                    v-model.trim="inputValue"
+                    @keyup.enter="addMessage(inputValue, currentIndex)">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>

@@ -3,6 +3,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            inputValue: '',
+
             currentIndex: 0,
 
             contacts: [
@@ -170,7 +172,19 @@ createApp({
             ]
         }
     }, methods: {
+        addMessage(value, index){
+            if(value !== ''){
+                const newMessage = {
+                    data: '10/01/2020 15:30:55',
+                    message: value,
+                    status: 'sent'
+                }
+    
+                this.contacts[index].messages.push(newMessage)
 
+                this.inputValue = ""
+            }
+        }
     }, mounted() {
         console.log('VUE OK')
     }

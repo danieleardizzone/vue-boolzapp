@@ -173,28 +173,30 @@ body{
 }
 
 .selected-chat{
+    background-image: url(../img/mine.jpg);
+}
+
+.messages{
     display: flex;
     flex-direction: column;
 
     gap: 10px;
     padding: 20px 80px;
-
-    background-image: url(../img/mine.jpg);
 }
 
-.selected-chat > *{
+.messages > *{
     width: 40%;
 
     padding: 10px 10px;
     border-radius: 10px;
 }
 
-.user-message{
+.sent-message{
     align-self: flex-end;
     background-color: rgb(220,248,198);
 }
 
-.contact-message{
+.received-message{
     align-self: flex-start;
     background-color: rgb(255, 255, 255);
 }
