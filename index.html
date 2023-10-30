@@ -32,11 +32,14 @@
                         <span class="group-icon">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </span>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat"
+                        v-model.trim="researchInputValue"
+                        @keyup.enter="provaRicerca(researchInputValue)">
                     </div>
                 </div>
                 <ul class="contacts__list flex-grow-1">
                     <li class="contact flex-align-center"
+                    :class="researchControl === true ? '' : 'd-none'"
                     v-for="(contact, index) in contacts" :key="index"
                     @click="currentIndex = index">
                         <div class="contact__img">
@@ -75,8 +78,8 @@
                 <div class="text-box flex-align-center justify-content-around">
                     <i class="fa-regular fa-face-smile"></i>
                     <input type="text" placeholder="Scrivi un messaggio"
-                    v-model.trim="inputValue"
-                    @keyup.enter="addMessage(inputValue, currentIndex)">
+                    v-model.trim="messageInputValue"
+                    @keyup.enter="addMessage(messageInputValue, currentIndex)">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>

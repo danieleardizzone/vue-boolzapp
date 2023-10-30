@@ -3,7 +3,11 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            inputValue: '',
+            messageInputValue: '',
+
+            researchInputValue: '',
+
+            researchControl: true,
 
             currentIndex: 0,
 
@@ -172,6 +176,15 @@ createApp({
             ]
         }
     }, methods: {
+        // createAnswer(index){
+        //     const newAnswerMessage = {
+        //         data: '10/01/2020 15:30:55',
+        //         message: 'Ok',
+        //         status: 'received'
+        //     }
+
+        //     this.contacts[index].messages.push(newAnswerMessage)
+        // },
         addMessage(value, index){
             if(value !== ''){
                 const newMessage = {
@@ -182,7 +195,50 @@ createApp({
     
                 this.contacts[index].messages.push(newMessage)
 
-                this.inputValue = ""
+                this.messageInputValue = ""
+
+                setTimeout(() => {
+                    const newAnswerMessage = {
+                        data: '10/01/2020 15:30:55',
+                        message: 'Ok',
+                        status: 'received'
+                    }
+        
+                    this.contacts[index].messages.push(newAnswerMessage)
+                }, 1000);
+            }
+        },
+        provaRicerca(value){
+            if(value !== ''){
+
+                console.log(value);
+                
+                const arrayValue = value.toLowerCase().split('');
+
+                console.log(arrayValue);
+
+                // const arrayContact = this.contacts[0].name.toLowerCase().split('')
+
+                // console.log(arrayContact);
+                
+                for (i = 0; i < arrayValue.length; i++){
+                    const currentLetter = arrayValue[i]
+
+                    for (j = 0; j < this.contacts.length; j++){
+
+                        const arrayContact = this.contacts[j].name.toLowerCase().split('')
+                        console.log(arrayContact)
+                        if(arrayContact.includes(currentLetter)){
+                            this.researchControl = true
+                            console.log('CONTROLLO PASSATO')
+                        }else{
+                            this.researchControl = false
+                            console.log('CONTROLLO NON PASSATO')
+                        }
+                    }
+
+                    
+                }
             }
         }
     }, mounted() {

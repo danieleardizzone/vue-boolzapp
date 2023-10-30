@@ -34,6 +34,10 @@ body{
     justify-content: space-around;
 }
 
+.d-none{
+    display: none;
+}
+
 #app{
     height: 100vh;
     overflow: hidden;
@@ -173,6 +177,8 @@ body{
 }
 
 .selected-chat{
+    overflow-y: scroll;
+
     background-image: url(../img/mine.jpg);
 }
 
