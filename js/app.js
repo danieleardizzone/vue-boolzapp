@@ -208,39 +208,50 @@ createApp({
                 }, 1000);
             }
         },
-        provaRicerca(value){
-            if(value !== ''){
+        // provaRicerca(value){
+        //     if(value !== ''){
 
-                console.log(value);
+        //         console.log(value);
                 
-                const arrayValue = value.toLowerCase().split('');
+        //         const arrayValue = value.toLowerCase().split('');
 
-                console.log(arrayValue);
+        //         console.log(arrayValue);
 
-                // const arrayContact = this.contacts[0].name.toLowerCase().split('')
+        //         // const arrayContact = this.contacts[0].name.toLowerCase().split('')
 
-                // console.log(arrayContact);
+        //         // console.log(arrayContact);
                 
-                for (i = 0; i < arrayValue.length; i++){
-                    const currentLetter = arrayValue[i]
+        //         for (i = 0; i < arrayValue.length; i++){
+        //             const currentLetter = arrayValue[i]
 
-                    for (j = 0; j < this.contacts.length; j++){
+        //             for (j = 0; j < this.contacts.length; j++){
 
-                        const arrayContact = this.contacts[j].name.toLowerCase().split('')
-                        console.log(arrayContact)
-                        if(arrayContact.includes(currentLetter)){
-                            this.researchControl = true
-                            console.log('CONTROLLO PASSATO')
-                        }else{
-                            this.researchControl = false
-                            console.log('CONTROLLO NON PASSATO')
-                        }
-                    }
+        //                 const arrayContact = this.contacts[j].name.toLowerCase().split('')
+        //                 console.log(arrayContact)
+        //                 if(arrayContact.includes(currentLetter)){
+        //                     this.researchControl = true
+        //                     console.log('CONTROLLO PASSATO')
+        //                 }else{
+        //                     this.researchControl = false
+        //                     console.log('CONTROLLO NON PASSATO')
+        //                 }
+        //             }
 
                     
-                }
-            }
-        }
+        //         }
+        //     }
+        // }
+        // provaRicerca2() {
+        //     return this.contacts.filter(contactName => {
+        //     return contactName.name.toLowerCase().includes(this.researchInputValue.toLowerCase())
+        //     })
+        //   }
+    }, computed: {
+        provaRicerca2() {
+            return this.contacts.filter(contactName => {
+            return contactName.name.toLowerCase().includes(this.researchInputValue.toLowerCase())
+            })
+          }
     }, mounted() {
         console.log('VUE OK')
     }

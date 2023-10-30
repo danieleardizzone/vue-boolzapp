@@ -33,15 +33,14 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </span>
                         <input type="text" placeholder="Cerca o inizia una nuova chat"
-                        v-model.trim="researchInputValue"
-                        @keyup.enter="provaRicerca(researchInputValue)">
+                        v-model.trim="researchInputValue">
                     </div>
                 </div>
                 <ul class="contacts__list flex-grow-1">
                     <li class="contact flex-align-center"
-                    :class="researchControl === true ? '' : 'd-none'"
                     v-for="(contact, index) in contacts" :key="index"
-                    @click="currentIndex = index">
+                    @click="currentIndex = index"
+                    v-for="contactName in provaRicerca2">
                         <div class="contact__img">
                             <img :src="contact.avatar" alt="">
                         </div>
